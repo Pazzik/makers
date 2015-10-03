@@ -30,14 +30,14 @@
 
 <h2>Add Comment:</h2>
 <%= form_for ([@video,@video.comments.build]) do |f| %>
-  
-  <div class="field">
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
-  </div>
+  <% if user_signed_in? %>	
+	 <div class="field">
+  	 <%= f.hidden_field :author, value: current_user.username %>
+  	</div>
+  <% end %>
   <div class="field">
     <%= f.label :body %><br>
-    <%= f.text_field :body %>
+    <%= f.text_area :body %>
   </div>
   <div class="actions">
     <%= f.submit %>
