@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+	<%= video_tag @video.video.url, :size => "640x480", :controls => true, :autobuffer => true, :preload => "none" %>
+</p>
+
+<p>
   <strong>Title:</strong>
   <%= @video.title %>
 </p>
