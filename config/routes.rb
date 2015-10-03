@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :videos
   # get 'home/index'
 
   root 'home#index'
