@@ -1,6 +1,7 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_user!
   # GET /videos
   # GET /videos.json
   def index
