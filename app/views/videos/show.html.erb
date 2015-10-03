@@ -14,5 +14,32 @@
   <%= @video.description %>
 </p>
 
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
+<p>
+	<%= link_to 'Edit', edit_video_path(@video) %> |
+	<%= link_to 'Back', videos_path %>
+</p>
+
+<h2>Comments</h2>
+
+<% @video.comments.each do |comment| %>
+	<p>
+		<i><%= comment.author %> said: </i><br/>		
+		<%=comment.body %>
+	</p>
+<% end %>
+
+<h2>Add Comment:</h2>
+<%= form_for ([@video,@video.comments.build]) do |f| %>
+  
+  <div class="field">
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_field :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
