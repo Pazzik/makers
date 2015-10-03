@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: makers_development
+  pool: 5
+  username: makers
+  password: pazzik
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: makers_test
+  pool: 5
+  username: makers
+  password: pazzik
